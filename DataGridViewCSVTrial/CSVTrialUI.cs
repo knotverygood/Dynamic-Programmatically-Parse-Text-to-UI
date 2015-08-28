@@ -25,7 +25,7 @@ namespace DataGridViewCSVTrial
             openFileDialog1.Filter = "CSV files (*.csv)|*.CSV";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.ShowDialog();
-                       
+
             textBox1.Text = openFileDialog1.FileName;
         }
 
@@ -118,10 +118,10 @@ namespace DataGridViewCSVTrial
             {
                 System.IO.StreamWriter fileWriter = new StreamWriter(textBox1.Text, false);
                 string columnHeaderText = "";
-                
+
                 //Writing DataGridView Header in File
                 int countColumn = dataGridView1.ColumnCount -1;
-                
+
                 if(countColumn >= 0)
                 {
                     columnHeaderText = dataGridView1.Columns[0].HeaderText;
@@ -147,7 +147,7 @@ namespace DataGridViewCSVTrial
                         {
                             dataFromGrid = dataFromGrid + delimiter + dataRowObject.Cells[i].Value.ToString();
                         }
-                        
+
                         fileWriter.WriteLine(dataFromGrid);
                     }
                 }
